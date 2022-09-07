@@ -1,0 +1,65 @@
+DOM: document object model: dùng để truy xuất và thao tác trên các tài liệu có cấu trúc dạng HTML hay XML(Extensible Markup Language là ngôn ngữ đánh dấu mở rộng. truyền dữ liệu và mô tả nhiều loại dữ liệu khác nhau)
+HTML: Hypertext Markup Language là ngôn ngữ dùng để xây dựng và cấu trúc lại các thành phần có trong Website.
+Các loại phần tử trong HTML:
+	- phần tử thường: thẻ mở + nội dung + thẻ đóng
+	- phần tử rỗng: có thẻ mở k có nội dung và thẻ đóng (</br>, </hr>)
+CSS: Cascading Style Sheets, nó là một ngôn ngữ được sử dụng để tìm và định dạng lại các phần tử được tạo ra bởi HTML
+Nhúng CSS:
+	- Inline CSS: Nhúng trực tiếp vào tài liệu HTML thông qua thuộc tính style.
+	- Internal CSS: Dùng thẻ <style> bên trong thẻ <head> của HTML để tạo ra nơi viết mã CSS.
+	- External CSS: Tạo một tập tin .css riêng và nhúng vào tài liệu HTML thông qua cặp thẻ <link>.\
+Flex: 
+	- flex-direction: column(default), row, column-reverse, row-reverse
+	- flex-wrap: nowrap(default), wrap, wrap-reverse
+	- flex-flow: kết hợp giữa flex-direction và flex-wrap. giá trị đầu là direction, thứ 2 là wrap
+	- justified-content: căn vị trí theo chiều ngang: 
+			flex-start: đặt item phía trái của thẻ cha
+			flex-end: đặt iteam phía phải của thẻ cha
+			center: chính giữa cách đều trái phải
+			space-around:  chia khoảng cách ở đầu và cuối. Khoảng cách ở đầu và cuối sẽ bằng 1/2 khoảng cách giữa 2 item
+			space-between: sẽ chia đều khoảng cách thừa và thêm nó vào giữa các item
+			space-evenly:sẽ chia khoảng cách đều khoảng cách giữa các item với item, item và main start, item với main end bằng nhau
+	- align-items:  stretch: height item = height thẻ cha
+			flex-start: trên cùng bên trái
+			flex-end: dưới cùng bên trái
+			center: căn giữa của thẻ cha
+			baseline: đặt các văn bản của item thẳng hàng
+	- align-content: giống với justified-content nhưng căn theo chiều dọc
+Layout: 1 website thường dc chia thành các phần: 
+	- header: chứa tên trang, logo
+	- thanh menu: dùng để điều hướng trang web
+	- nội dung: chứa nội dung chính của trang web
+	- footer: thường chứa thông tin như bản quyền, thông tin liên lạc
+JS: javascript - Nhiệm vụ của Javascript là xử lý những đối tượng HTML trên trình duyệt. Có thể thực hiện thêm/xóa/sửa các thuộc tính CSS và các thẻ HTML.
+ES6: 	- let, const 
+	- for of: sử dụng để lặp trên các giá trị của arr, obj
+	- template literals: (` `), có thể truyền vào biến hoặc biểu thức
+	- arrow func: Cú pháp gọn hơn, dễ hiểu hơn. Hạn chế ảnh hưởng this trong một scope. Vì mỗi khi chúng ta dùng một function thì một this mới sẽ sinh ra.
+	- detructuring: khai báo biến ngắn gọn hơn dựa vào các property của obj hoặc các phần tử của mảng
+		const person = { firstName:'tran', lastName:'trung' }
+		const { firstName, lastName } = person;
+		const details = ['trung duc', 21]; const [name, age] = details;
+	- spread operator: dùng để trải các phần tử của một đối tượng có thể lặp như mảng. 
+		const arr1 = [1,3,5];
+		const arr2 = [2,4,6, ...arr1];
+		console.log(arr2); // [ 2, 4, 6, 1, 3, 5 ]
+	- rest parameter: 1 loại tham số cho phép truyền vô hạn đối số dưới dạng 1 mảng vào func. bắt đầu bằng dấu ... và phải đặt ở cuối danh sách đối số
+		function sum(...args) {
+    			let total = 0;
+    			for (const x of args) { total += x; } 
+			return total; 
+		}
+	- class: sử dụng từ khóa class, dùng constructor để khởi tạo giá trị ban đầu. dùng extend để kế thừa class và super để truy cập ngữ cảnh(this)
+	- module: được biểu diễn bằng 1 tệp .js riêng. dùng export hoặc import để xuất hoặc nhập tới 1 module khác
+	- giá trị mặc định cho tham số. func a(name = "trung"){}
+Express: là 1 framework dành cho nodeJS. hỗ trợ các phương thức HTTP và midleware để tạo API.
+	- Thiết lập các lớp trung gian để trả về các HTTP request
+	- Định nghĩa router cho phép sử dụng với các hành động khác nhau (GET, PUT, PATCH, POST, DELETE,... ) dựa trên phương thức HTTP và URL
+	- Cho phép trả về các trang HTML dựa vào các tham số.
+Câu lệnh SQL: 
+	- select <tên cột|count|sum> from <tên bảng> where <điều kiện: and/or/like> orderby <tên cột:asc|desc> groupby <tên cột>
+	- create table tên_bảng(kiểu dữ liệu cột 1, kiểu dữ liệu cột 2,... ,primery key(1|nhiều cột))
+	- drop table tên_bảng
+	- insert into tên_bảng(cột1, cột2,...) value(data cột1, data cột2)
+	- update tên_bảng set cột1=data1, cột2=data2,... [where <điều kiện>]
+	- delete from tên_bảng where <điều kiện>
